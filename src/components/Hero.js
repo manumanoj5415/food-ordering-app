@@ -1,6 +1,6 @@
 import React from "react";
 import { restaurants } from "./data";
-import "./Hero.css"; // Ensure you have the CSS for styling
+import "./Hero.css";
 
 const Hero = ({ addToCart }) => {
   return (
@@ -12,7 +12,7 @@ const Hero = ({ addToCart }) => {
           <img
             src={restaurant.image}
             alt={restaurant.name}
-            style={{ height: "200px" }}
+            className="restaurant-image"
           />
 
           <div className="menu">
@@ -21,11 +21,13 @@ const Hero = ({ addToCart }) => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  style={{ height: "150px", width: "150px" }}
+                  className="menu-item-image"
                 />
-                <h3>{item.name}</h3>
-                <p>₹{item.price}</p>
-                <button onClick={() => addToCart(item)}>Add to Cart</button>
+                <div className="menu-item-details">
+                  <h3>{item.name}</h3>
+                  <p>₹{item.price}</p>
+                  <button onClick={() => addToCart(item)}>Add to Cart</button>
+                </div>
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./Menu.css";
 const Menu = ({ addToCart }) => {
   const menuItems = [
     {
@@ -18,28 +18,28 @@ const Menu = ({ addToCart }) => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRT3F8R5AtpBbWe8mCgPlKIknWHQyFCj7myA&s",
     },
     {
-      id: 2,
+      id: 3,
       name: "Fresh Fries",
       price: 55,
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdwABqay1xzqUMMtesTe8WAesrw7emXVVUIQ&s",
     },
     {
-      id: 2,
+      id: 4,
       name: "Masal dosa",
       price: 90,
       image:
         "https://i.pinimg.com/736x/2a/c1/51/2ac15169850a766390adcba3a6d28eef.jpg",
     },
     {
-      id: 2,
+      id: 5,
       name: "idali",
       price: 80,
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStJb9rOuAKWI59gLR3qQtuwmRvh1YlbXWDkg&s",
     },
     {
-      id: 2,
+      id: 6,
       name: "Gobi",
       price: 200,
       image:
@@ -52,21 +52,19 @@ const Menu = ({ addToCart }) => {
 
   const handleAddToCart = (item) => {
     addToCart(item);
-    navigate("/Menu"); // Navigate to the cart page
+    navigate("/cart"); // Navigate to the cart page
   };
 
   return (
     <div className="menu">
       {menuItems.map((item) => (
         <div className="menu-item" key={item.id}>
-          <img
-            src={item.image} // Use the specific image URL for each item
-            alt={item.name}
-            style={{ height: "200px", width: "200px" }}
-          />
-          <h3>{item.name}</h3>
-          <p>₹{item.price}</p>
-          <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+          <img src={item.image} alt={item.name} className="menu-item-image" />
+          <div className="menu-item-details">
+            <h3>{item.name}</h3>
+            <p>₹{item.price}</p>
+            <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+          </div>
         </div>
       ))}
     </div>

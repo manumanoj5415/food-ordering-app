@@ -21,7 +21,7 @@ const Navbar = ({ cartItemsCount }) => {
           <li>
             <Link to="/ContactUS">Contact</Link>
           </li>
-          <li>
+          <li className="cart-icon">
             <Link to="/cart">
               <FontAwesomeIcon icon={faShoppingCart} />
               {cartItemsCount > 0 && (

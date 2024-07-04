@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import Menu from "./components/Menu";
 import Cart from "./components/Cart";
 import OrderTracking from "./components/OrderTracking";
-import ContactUS from "./components/ContactUS"; // Corrected the component name
+import ContactUS from "./components/ContactUS";
 import Footer from "./components/Footer";
 import About from "./components/About";
 
@@ -26,9 +26,7 @@ const App = () => {
           <Route path="/cart" element={<Cart cartItems={cartItems} />} />
           <Route path="/order-tracking" element={<OrderTracking />} />
           <Route path="/ContactUS" element={<ContactUS />} />
-          <Route path="/About" element={<About />} />
-
-          {/* Updated the component usage */}
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
