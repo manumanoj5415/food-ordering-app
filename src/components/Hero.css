@@ -1,0 +1,12 @@
+.menu{
+    display: flex;
+    justify-content:flex-start;
+    gap: 10px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.restaurant{
+margin-left: 100px;
+
+}
+
